@@ -104,12 +104,6 @@ app.layout = dbc.Container(fluid=True, children=[
         dbc.Col(dbc.Card(dbc.CardBody([html.H6("Avg Mean Salary (RM)"), html.H2(f"{avg_mean_salary:,.0f}")]), color="warning", inverse=True), width=4),
     ], className="mt-4 g-4"),
 
-    # ◉ Pie / Donut chart (first)
-    dbc.Row(dbc.Col(dbc.Card([
-        dbc.CardHeader("Postings by Category"),
-        dbc.CardBody(dcc.Graph(id='pie-chart', figure=fig_pie_init, config={'displayModeBar':False}))
-    ], className="shadow-sm"), width=12), className="mt-4"),
-
     # ◉ Jobs by Category bar
     dbc.Row(dbc.Col(dbc.Card([
         dbc.CardHeader("Avg Min & Avg Max Salary by Category"),
@@ -138,6 +132,12 @@ app.layout = dbc.Container(fluid=True, children=[
                          placeholder="Select a state", clearable=True)
         ], md=6),
     ], className="mt-4 g-4"),
+
+# ◉ Pie / Donut chart (first)
+    dbc.Row(dbc.Col(dbc.Card([
+        dbc.CardHeader("Postings by Category"),
+        dbc.CardBody(dcc.Graph(id='pie-chart', figure=fig_pie_init, config={'displayModeBar':False}))
+    ], className="shadow-sm"), width=12), className="mt-4"),
 
     # Salary summary bar
     dbc.Row(dbc.Col(dbc.Card([
